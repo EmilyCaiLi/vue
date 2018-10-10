@@ -1,15 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+const index = r => require.ensure([], () => r(require('../pages/index/index.vue')), 'pages')
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
+  mode: 'history',
+  base: 'h5',
+  linkActiveClass: 'active',
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      redirect: 'index'
+    },
+    {
+      path: '/index',
+      name: 'index',
+      component: index
     }
   ]
 })
+router.beforeEach(function (to, from, next) {
+  next()
+})
+export default router

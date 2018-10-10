@@ -6,11 +6,19 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
-    // Paths
+    // Paths Api代理
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/api': {
+        target: 'http://192.168.8.126:8080',
+        //secure: false //如果是https接口，需要配置这个参数
+        changeOrigin: true, //如果接口跨域，需要进行配置
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -45,12 +53,12 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../dist/index.html'),
+    index: path.resolve(__dirname, '../h5/index.html'),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsRoot: path.resolve(__dirname, '../h5'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: '/h5',
 
     /**
      * Source Maps
