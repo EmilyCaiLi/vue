@@ -7,10 +7,10 @@
         <a href="https://vuejs.org" target="_blank">Core Docs 啊哈哈哈哈</a>
       </li>
       <li>
-        <a href="https://forum.vuejs.org" target="_blank">Forum</a>
+        <a href="https://forum.vuejs.org" target="_blank">Forum 啊哈哈哈哈</a>
       </li>
       <li>
-        <a href="https://chat.vuejs.org" target="_blank">Community Chat</a>
+        <a href="https://chat.vuejs.org" target="_blank">Community Chat 啊哈哈哈哈</a>
       </li>
       <li>
         <a href="https://twitter.com/vuejs" target="_blank">Twitter</a>
